@@ -1,0 +1,44 @@
+@model Teacher_Student_platform.Models.Entities.quesAns
+
+@{
+    ViewData["Title"] = "Add Question and Answer";
+}
+
+<style>
+    body {
+        background-color: #333; /* Dark background color */
+        color: white; /* Text color */
+    }
+</style>
+
+<h1>Add Question and Answer</h1>
+
+<form method="post" asp-action="Add">
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Ques">Question:</label>
+        <input asp-for="Ques" class="form-control" />
+        <span asp-validation-for="Ques" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Answer">Answer:</label>
+        <input asp-for="Answer" class="form-control" />
+        <span asp-validation-for="Answer" class="text-danger"></span>
+    </div>
+
+    <!-- Include other form fields as needed -->
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
