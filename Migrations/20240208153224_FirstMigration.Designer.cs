@@ -12,7 +12,7 @@ using Teacher_Student_platform.Web.Data;
 namespace Teacher_Student_platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240208051423_FirstMigration")]
+    [Migration("20240208153224_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -31,6 +31,10 @@ namespace Teacher_Student_platform.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -39,7 +43,7 @@ namespace Teacher_Student_platform.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ques")
+                    b.Property<string>("Question")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

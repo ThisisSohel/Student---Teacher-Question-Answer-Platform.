@@ -1,12 +1,10 @@
-using System;
-
-namespace Teacher_Student_platform.Models.Entities
+﻿namespace Teacher_Student_platform.Models
 {
-    public class quesAns
+    public class AddQuesAnsViewModel
     {
-        public Guid Id { get; set; }
 
         public string Name { get; set; }
+      
         public string Email { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; } // Make Answer property optional

@@ -4,8 +4,6 @@
 @{
 }
 
-@model Teacher_Student_platform.Models.AddQuesAnsViewModel
-
 <style>
     body {
         background-color: #1f1111;
@@ -13,9 +11,15 @@
     }
 </style>
 
-<h1>Add Question and Answer</h1>
+@model Teacher_Student_platform.Models.Entities.quesAns;
+
+<h1>Reply Question and Answer</h1>
 
 <form method="post">
+    <div class="mt-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" asp-for="Id" readonly> 
+    </div>
     <div class="mt-3">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" asp-for="Name">
