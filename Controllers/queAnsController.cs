@@ -48,6 +48,7 @@ namespace Teacher_Student_platform.Controllers
         public async Task<IActionResult> Edit(Guid id)
         {
             var qusans = await dbContext.quesAnses.FindAsync(id);
+
             return View(qusans);
              
         }
@@ -56,22 +57,37 @@ namespace Teacher_Student_platform.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(quesAns viewModel)
         {
-            var qusans = await dbContext.quesAnses.FindAsync(viewModel.Id);
+            var qusans1 = await dbContext.quesAnses.FindAsync(viewModel.Id);
 
-            if(qusans is not null)
+            if(qusans1 is not null)
             {
-                qusans.Name = viewModel.Name;
-                qusans.Email = viewModel.Email;
-                qusans.Question = viewModel.Question;
-                qusans.Answer = viewModel.Answer;
+                qusans1.Name = viewModel.Name;
+                qusans1.Email = viewModel.Email;
+                qusans1.Question = viewModel.Question;
+                qusans1.Answer = viewModel.Answer;
 
 
                 await dbContext.SaveChangesAsync();
+
             }
             return RedirectToAction("List", "QueAns");
-
         }
 
+        [HttpPost]
+
+        public async Task<IActionResult> Delete(quesAns viewModel)
+        {
+            var qusans1 = await dbContext.quesAnses
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == viewModel.Id);
+            if(qusans1 is not null)
+            {
+                dbContext.quesAnses.Remove(viewModel);
+                await dbContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("List", "QueAns");
+        }
 
     }
 }

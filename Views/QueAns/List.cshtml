@@ -19,16 +19,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var quesAns in Model)
+        @foreach(var qA in Model)
         {
             <tr>
-                <td>@quesAns.Id</td>
-                <td>@quesAns.Name</td>
-                <td>@quesAns.Email</td>
-                <td>@quesAns.Question</td>
-                <td>@quesAns.Answer</td>
+                <td>@qA.Id</td>
+                <td>@qA.Name</td>
+                <td>@qA.Email</td>
+                <td>@qA.Question</td>
+                <td>@qA.Answer</td>
                 <td>
-                    <a class="btn btn-primary" asp-controller="QueAns" asp-action="Edit" asp-all-route-id="@quesAns.Id">Reply-Ques</a>
+                    <a class="btn btn-primary" asp-controller="QueAns" asp-action="Edit" asp-route-id="@qA.Id">Reply-Ques</a>
 
                 </td>
             </tr>
