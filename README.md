@@ -5,6 +5,8 @@
 ....................
 
 Database Name: QuesAnsDb
+
 Table name for Question Answer Platform: quesAnses
+
 Table name for Question Answer Platform: ByDefault
 
