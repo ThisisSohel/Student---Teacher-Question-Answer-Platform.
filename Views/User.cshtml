@@ -1,0 +1,23 @@
+﻿@page
+@model Teacher_Student_platform.Views.UserModel
+@{
+}
+<h2>Welcome to your page</h2>
+
+<div>
+    Name: @Model.appUser?.Name
+</div>
+
+<div>
+    Email: @Model.appUser?.EmailAddress
+</div>
+<div>
+    Institute Name: @Model.appUser?.InsName
+</div>
+<div>
+    Institute ID: @Model.appUser?.InsId
+</div>
+
+<div>
+    Created At: @Model.appUser?.CreateedAt.ToString("MM/dd/yyyy")
+</div>
