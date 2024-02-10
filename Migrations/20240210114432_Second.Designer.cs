@@ -12,8 +12,8 @@ using Teacher_Student_platform.Web.Data;
 namespace Teacher_Student_platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240210055946_secondMigration")]
-    partial class secondMigration
+    [Migration("20240210114432_Second")]
+    partial class Second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +183,14 @@ namespace Teacher_Student_platform.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("InsId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

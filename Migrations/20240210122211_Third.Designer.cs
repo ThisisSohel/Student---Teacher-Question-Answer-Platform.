@@ -12,8 +12,8 @@ using Teacher_Student_platform.Web.Data;
 namespace Teacher_Student_platform.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240210061414_thirdMigration")]
-    partial class thirdMigration
+    [Migration("20240210122211_Third")]
+    partial class Third
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,19 +54,21 @@ namespace Teacher_Student_platform.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "db2d2b6e-09d2-4303-a218-63f656933d65",
+                            Id = "57f45334-7b8f-4fb5-9330-e209baff93b1",
+                            Name = "student",
+                            NormalizedName = "student"
+                        },
+                        new
+                        {
+                            Id = "9159b4d4-a369-4813-83e9-f603dc144713",
                             Name = "teacher",
+                            NormalizedName = "teacher"
+                        },
+                        new
+                        {
+                            Id = "e0381a11-3a45-4dee-9466-8887c455daf3",
+                            Name = "moderator",
                             NormalizedName = "moderator"
-                        },
-                        new
-                        {
-                            Id = "eece73d8-46af-4499-9fdf-1de15c308548",
-                            Name = "student"
-                        },
-                        new
-                        {
-                            Id = "40f6c66a-da16-41ee-b7ee-40a89a496a32",
-                            Name = "moderator"
                         });
                 });
 
@@ -201,6 +203,14 @@ namespace Teacher_Student_platform.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("InsId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

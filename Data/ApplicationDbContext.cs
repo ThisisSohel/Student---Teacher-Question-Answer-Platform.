@@ -4,14 +4,15 @@ using Microsoft.EntityFrameworkCore;
 using Teacher_Student_platform.Models;
 using Teacher_Student_platform.Models.Entities;
 
-namespace Teacher_Student_platform.Web.Data {
-    
+namespace Teacher_Student_platform.Web.Data
+{
 
-    public class ApplicationDbContext: IdentityDbContext<ApplicationUser>
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext (DbContextOptions options):base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-            
+
         }
 
         public DbSet<quesAns> quesAnses { get; set; }
@@ -20,16 +21,16 @@ namespace Teacher_Student_platform.Web.Data {
         {
             base.OnModelCreating(builder);
 
+            var student = new IdentityRole("student");
+            student.NormalizedName = "student";
+
             var teacher = new IdentityRole("teacher");
             teacher.NormalizedName = "teacher";
 
-            var student = new IdentityRole("student");
-            teacher.NormalizedName = "student";
-
             var moderator = new IdentityRole("moderator");
-            teacher.NormalizedName = "moderator";
+            moderator.NormalizedName = "moderator";
 
-            builder.Entity<IdentityRole>().HasData(teacher, student, moderator);
+            builder.Entity<IdentityRole>().HasData(student, teacher, moderator);
         }
 
     }

@@ -7,7 +7,7 @@
 namespace Teacher_Student_platform.Migrations
 {
     /// <inheritdoc />
-    public partial class thirdMigration : Migration
+    public partial class Third : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,9 +17,9 @@ namespace Teacher_Student_platform.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "40f6c66a-da16-41ee-b7ee-40a89a496a32", null, "moderator", null },
-                    { "db2d2b6e-09d2-4303-a218-63f656933d65", null, "teacher", "moderator" },
-                    { "eece73d8-46af-4499-9fdf-1de15c308548", null, "student", null }
+                    { "57f45334-7b8f-4fb5-9330-e209baff93b1", null, "student", "student" },
+                    { "9159b4d4-a369-4813-83e9-f603dc144713", null, "teacher", "teacher" },
+                    { "e0381a11-3a45-4dee-9466-8887c455daf3", null, "moderator", "moderator" }
                 });
         }
 
@@ -29,17 +29,17 @@ namespace Teacher_Student_platform.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "40f6c66a-da16-41ee-b7ee-40a89a496a32");
+                keyValue: "57f45334-7b8f-4fb5-9330-e209baff93b1");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "db2d2b6e-09d2-4303-a218-63f656933d65");
+                keyValue: "9159b4d4-a369-4813-83e9-f603dc144713");
 
             migrationBuilder.DeleteData(
                 table: "AspNetRoles",
                 keyColumn: "Id",
-                keyValue: "eece73d8-46af-4499-9fdf-1de15c308548");
+                keyValue: "e0381a11-3a45-4dee-9466-8887c455daf3");
         }
     }
 }
